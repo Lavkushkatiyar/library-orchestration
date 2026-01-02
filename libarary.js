@@ -32,7 +32,7 @@ export class Library {
     const mode = "parallel";
 
     const isCustomerValid = customers.includes(customerId);
-    await this.#delay(1000);
+    await this.#delay(2000);
 
     const end = Date.now();
     return {
@@ -47,7 +47,7 @@ export class Library {
     const mode = "parallel";
 
     const isBookValid = isValidBook.includes(bookName);
-    await this.#delay(1000);
+    await this.#delay(2000);
 
     const end = Date.now();
     return {
@@ -62,7 +62,7 @@ export class Library {
     const start = Date.now();
     const mode = "serial";
 
-    await this.#delay(2000);
+    await this.#delay(1000);
     const isAvailable = availableBooks.includes(bookName);
 
     const end = Date.now();
@@ -76,7 +76,7 @@ export class Library {
   async appointBookToCustomer(customerId, bookName) {
     const start = Date.now();
     const mode = "serial";
-    await this.#delay(2000);
+    await this.#delay(1000);
     const isAvailable = availableBooks.includes(bookName);
 
     const end = Date.now();
