@@ -1,6 +1,4 @@
-const customers = ["092"];
-const isValidBook = ["jeene nahi dunga", "jeene nahi dunga part 2"];
-const availbleBook = ["jeene nahi dunga"];
+import { availbleBook, customers, isValidBook } from "./catelog.js";
 export class library {
   #delay(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -36,17 +34,26 @@ export class library {
     const isAvailble = availbleBook.includes(bookName);
     return { mode, isAvailble };
   }
-  async appointBook(userName) {
-    //serial
+
+  async appointBook(userName, bookName) {
     const mode = "serial";
     await this.#delay(2000);
     const appointBook = availbleBook.includes(bookName);
-    return { mode, isAvailble };
+    return { mode, apointedTo: userName, isAvailble: appointBook };
   }
-  reciptGenerate() {
-    //paralell
+  async reciptGenerate(bookName, CustomerId) {
+    const mode = "paralell";
+    await this.#delay(2000);
+    return {
+      mode,
+      customer: CustomerId,
+      appointed: bookName,
+      date: Date.now(),
+    };
   }
-  updateRecords() {
-    //paralell
+  async updateRecords() {
+    const mode = "paralell";
+    await this.#delay(2000);
+    return { mode, report: `record updated Sucessfully`, date: Date.now() };
   }
 }
