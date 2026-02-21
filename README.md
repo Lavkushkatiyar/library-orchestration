@@ -7,8 +7,6 @@ JavaScript functions.\
 Each step represents a real-world library operation and tracks **execution mode
 (serial / parallel)** and **duration**.
 
-The goal is to demonstrate:
-
 - Controlled async execution
 - Serial vs parallel task flow
 - Performance tracking using execution duration
@@ -23,5 +21,9 @@ The goal is to demonstrate:
 4. Book is appointed to customer (serial)
 5. Receipt is generated (parallel)
 6. Records are updated (parallel)
+
+---
+
+---
 
 ---
